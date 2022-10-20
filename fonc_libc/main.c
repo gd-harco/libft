@@ -8,7 +8,7 @@ char *ft_strstr(char *sourcestring, char *tofind);
 void main()
 {
 	char *string = "Hello There";
-	char *string2 = "llo The";
+	char *string2 = "llo  The";
 
 	printf("===================ft_strlen===================\n");
 	printf("Mon résultat : %d\n", ft_strlen(string));

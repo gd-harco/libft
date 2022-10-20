@@ -1,4 +1,6 @@
 //trouve un string dans un autre
+#include <string.h>
+
 int	lookforstring(char *s1, char *s2)
 {
 	int	x;
@@ -33,5 +35,5 @@ char *ft_strstr(char *sourcestring, char *tofind)
 		}
 		*sourcestring++;
 	}
-	return (0);
+	return (NULL);
 }
