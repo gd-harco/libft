@@ -38,6 +38,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	result_length = get_length(s, start, len);
 	result = malloc(sizeof(char) * result_length);
+	if (result == NULL)
+		return (NULL);
 	x = 0;
 	while (x < result_length)
 	{
