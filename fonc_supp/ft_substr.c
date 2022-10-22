@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	ft_strlen(char *s);
+int	ft_strlen(const char *s);
 
 int	get_length(char const *s, unsigned int start, size_t len)
 {
