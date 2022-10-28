@@ -9,19 +9,6 @@
 /*   Updated: 2022/10/27 19:08:09 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
-// Function name ft_itoa
-// Prototype char *ft_itoa(int n);
-// Fichiers de rendu -
-// Paramètres n: L’entier à convertir.
-// Valeur de retour La chaîne de caractères représentant l’entier.
-// NULL si l’allocation échoue.
-// Fonctions externes
-// autorisées
-// malloc
-// Description Alloue (avec malloc(3)) et retourne une chaîne
-// de caractères représentant l’entier ’n’ reçu en
-// argument. Les nombres négatifs doivent être gérés.
 #include <stdlib.h>
 
 int get_size(int n, int index, int count)
@@ -72,10 +59,3 @@ char	*ft_itoa(int n)
 	}
 	return (converted);
 }
-#include <stdio.h>
-int main()
- {
-	char * str = ft_itoa(-214748364);
-	printf("%s\n", str);
-	return 0;
- }
