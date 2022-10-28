@@ -31,30 +31,20 @@ int get_size(int n, int index, int count)
 	return count;
 }
 
-int recursive_power(int nb, int power)
-{
-	if (power == 0)
-		return (1);
-	if (power < 0)
-		return (0);
-	while (power > 0)
-		return (nb * ft_recursive_power(nb, power - 1));
-	return (1);
-}
-
 char	*ft_itoa(int n)
 {
 	int	strsize;
 	int	x;
 	char *converted;
-
 	strsize = get_size(n, 1, 1);
 	converted = malloc(sizeof(char)*strsize);
-	x = 0;
-	while (x < strsize)
+	x = strsize - 2;
+	converted[strsize - 1] = '\0';
+	while (x >= 0)
 	{
-		converted[x] = (n / (recursive_power(10, (strsize - x))))
+		converted[x] = (n % 10) + '0';
+		n /= 10;
+		x--;
 	}
-
 	return (converted);
 }
