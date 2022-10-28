@@ -11,22 +11,22 @@
 /* ************************************************************************** */
 #include <stdlib.h>
 
-int get_size(int n, int index, int count)
+int	get_size(int n, int index, int count)
 {
-	if (n/index > 0)
-		return(get_size(n, index*10, count+1));
-	return count;
+	if (n / index > 0)
+		return (get_size(n, index * 10, count + 1));
+	return (count);
 }
 
 char	*negative_itoa(int n)
 {
-	int	strsize;
-	int	x;
-	char *converted;
+	int		strsize;
+	int		x;
+	char	*converted;
 
 	strsize = get_size(n, 1, 1);
-	converted = malloc(sizeof(char)*strsize + 1);
-	x = strsize-1;
+	converted = malloc(sizeof(char) * strsize + 1);
+	x = strsize - 1;
 	converted[strsize] = '\0';
 	while (x > 0)
 	{
@@ -37,18 +37,19 @@ char	*negative_itoa(int n)
 	converted[x] = '-';
 	return (converted);
 }
+
 char	*ft_itoa(int n)
 {
-	int	strsize;
-	int	x;
-	char *converted;
+	int		strsize;
+	int		x;
+	char	*converted;
 
 	if (n == -2147483648)
 		return ("-2147483648");
 	if (n < 0)
-		return (negative_itoa(n *- 1));
+		return (negative_itoa(n * -1));
 	strsize = get_size(n, 1, 1);
-	converted = malloc(sizeof(char)*strsize);
+	converted = malloc(sizeof(char) * strsize);
 	x = strsize - 2;
 	converted[strsize - 1] = '\0';
 	while (x >= 0)
