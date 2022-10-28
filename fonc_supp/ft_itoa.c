@@ -31,11 +31,35 @@ int get_size(int n, int index, int count)
 	return count;
 }
 
+char	*negative_itoa(int n)
+{
+	int	strsize;
+	int	x;
+	char *converted;
+
+	strsize = get_size(n, 1, 1);
+	converted = malloc(sizeof(char)*strsize + 1);
+	x = strsize-1;
+	converted[strsize] = '\0';
+	while (x > 0)
+	{
+		converted[x] = (n % 10) + '0';
+		n /= 10;
+		x--;
+	}
+	converted[x] = '-';
+	return (converted);
+}
 char	*ft_itoa(int n)
 {
 	int	strsize;
 	int	x;
 	char *converted;
+
+	if (n == -2147483648)
+		return ("-2147483648");
+	if (n < 0)
+		return (negative_itoa(n *- 1));
 	strsize = get_size(n, 1, 1);
 	converted = malloc(sizeof(char)*strsize);
 	x = strsize - 2;
@@ -48,3 +72,10 @@ char	*ft_itoa(int n)
 	}
 	return (converted);
 }
+#include <stdio.h>
+int main()
+ {
+	char * str = ft_itoa(-214748364);
+	printf("%s\n", str);
+	return 0;
+ }

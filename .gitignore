@@ -2,4 +2,7 @@
 sujet/libft_fr.subject.pdf
 a.out
 main.c
-*.c
+./vscode
+*.exe
+.vscode/tasks.json
+test.c
