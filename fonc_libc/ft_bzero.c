@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 19:27:22 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/10/30 19:27:22 by gd-harco         ###   ########lyon.fr   */
+/*   Created: 2022/10/30 19:46:40 by gd-harco          #+#    #+#             */
+/*   Updated: 2022/10/30 19:46:40 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 #include <string.h>
 
-void	*memset(void *s, int c, size_t n)
+void	bzero(void *s, size_t n)
 {
 	int		x;
 	void	*result;
@@ -20,7 +20,7 @@ void	*memset(void *s, int c, size_t n)
 	x = 0;
 	while (x <= n)
 	{
-		s = c;
+		s = '\0';
 		s++;
 		x++;
 	}
