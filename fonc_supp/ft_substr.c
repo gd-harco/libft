@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int static	get_length(char const *s, unsigned int start, size_t len)
 {

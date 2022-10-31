@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/30 19:46:40 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+#include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n)
 {

@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/30 19:27:22 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+#include <stdlib.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {
