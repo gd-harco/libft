@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 19:46:40 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/10/30 19:46:40 by gd-harco         ###   ########lyon.fr   */
+/*   Created: 2022/10/31 11:50:45 by gd-harco          #+#    #+#             */
+/*   Updated: 2022/10/31 11:50:45 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_calloc( size_t elementCount, size_t elementSize )
 {
-	int		x;
-	char	*result;
+	void *result;
 
-	result = s;
-	x = 0;
-	while (x < n)
-	{
-		*result = '\0';
-		result++;
-		x++;
-	}
+	result = malloc(elementSize * elementCount);
+	if (result = NULL)
+		return (NULL);
+	ft_bzero(result, elementCount * elementSize);
+	return (result);
 }
+
