@@ -12,8 +12,6 @@
 
 #include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd);
-
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)

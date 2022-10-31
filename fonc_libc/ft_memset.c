@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include <string.h>
 
-void	*memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	int		x;
 	void	*result;

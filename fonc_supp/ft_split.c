@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include <stdlib.h>
 
-int	get_nb_word(char const *s, char c)
+int static	get_nb_word(char const *s, char c)
 {
 	int	index;
 	int	x;
@@ -27,14 +27,14 @@ int	get_nb_word(char const *s, char c)
 	return (index);
 }
 
-int	in_charset(char c, char charset)
+int static	in_charset(char c, char charset)
 {
 	if (c == charset)
 		return (1);
 	return (0);
 }
 
-void	splitnwrite(char **dest, const char *str, char charset, int nbr)
+void static	splitnwrite(char **dest, const char *str, char charset, int nbr)
 {
 	int		i;
 	int		j;

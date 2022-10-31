@@ -13,7 +13,7 @@
 //trouve un string dans un autre
 #include <string.h>
 
-int	lookforstring(char *s1, char *s2)
+int static	lookforstring(char *s1, char *s2)
 {
 	int	x;
 

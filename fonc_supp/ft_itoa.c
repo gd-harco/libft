@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 #include <stdlib.h>
 
-int	get_size(int n, int index, int count)
+int static	get_size(int n, int index, int count)
 {
 	if (n / index > 0)
 		return (get_size(n, index * 10, count + 1));
 	return (count);
 }
 
-char	*negative_itoa(int n)
+char static	*negative_itoa(int n)
 {
 	int		strsize;
 	int		x;
