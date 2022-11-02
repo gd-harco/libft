@@ -13,12 +13,11 @@
 
 void	*ft_calloc( size_t elementCount, size_t elementSize )
 {
-	void *result;
+	void	*result;
 
 	result = malloc(elementSize * elementCount);
-	if (result = NULL)
+	if (result == NULL)
 		return (NULL);
 	ft_bzero(result, elementCount * elementSize);
 	return (result);
 }
-
