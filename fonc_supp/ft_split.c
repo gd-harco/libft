@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 #include <stdlib.h>
 
+int	ft_strlen(const char	*s);
+
 int static	get_nb_word(char const *s, char c)
 {
 	int	index;
@@ -48,7 +50,7 @@ void static	splitnwrite(char **dest, const char *str, char charset, int nbr)
 			str++;
 		if (!in_charset(*str, charset))
 		{
-			len = ft_strlen(str, charset);
+			len = ft_strlen(str);
 			temp = malloc(sizeof(char) * (len + 1));
 			j = 0;
 			while (j < len)
