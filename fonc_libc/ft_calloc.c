@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gd-harco <gd-harco@42lyon.fr>              +#+  +:+       +#+        */
+/*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:50:45 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/10/31 11:50:45 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 14:11:56 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n);
+#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc( size_t elementCount, size_t elementSize )
 {

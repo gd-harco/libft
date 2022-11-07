@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gd-harco <gd-harco@42lyon.fr>              +#+  +:+       +#+        */
+/*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:42:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/10/24 11:42:00 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 14:10:21 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
 
-int	ft_strlen(const char	*s);
+#include <stdlib.h>
+#include "libft.h"
 
 int static	get_nb_word(char const *s, char c)
 {

@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-int	ft_strlen(const char	*s);
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

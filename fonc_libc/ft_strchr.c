@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/22 19:17:07 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include <stdlib.h>
 
 char	*ft_strchr(const char *s, int c)
 {

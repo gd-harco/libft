@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//trouve un string dans un autre
 #include <stdlib.h>
 
 int static	lookforstring(char *s1, char *s2)

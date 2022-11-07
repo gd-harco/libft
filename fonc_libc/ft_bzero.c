@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gd-harco <gd-harco@42lyon.fr>              +#+  +:+       +#+        */
+/*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 19:46:40 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/10/30 19:46:40 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 14:12:03 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n)
