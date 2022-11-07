@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: gd-harco <gd-harco@42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:42:07 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/11/07 14:09:11 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 14:26:32 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-
+char	*ft_strdup(const char *s1);
 #endif
