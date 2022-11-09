@@ -6,3 +6,5 @@ main.c
 *.exe
 .vscode/tasks.json
 test.c
+test_*.c
+libft.h
