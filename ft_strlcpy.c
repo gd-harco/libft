@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:19:10 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/11/08 17:57:52 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 14:47:02 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,33 +30,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		x++;
 	}
 	dst[x] = '\0';
-
 	return (ft_strlen(src));
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-	char *src = "Hello There";
-	char dst[50];
-	size_t result;
-	char *libcsrc = "Hello There";
-	char libcdst[50];
-	size_t libcresult;
-	ft_bzero(dst, 50);
-	ft_bzero(libcdst, 50);
-
-	printf("%s\n", dst);
-	result = ft_strlcpy(dst, src, 12);
-	printf("%s\n", dst);
-	printf("%zu\n", result);
-
-	printf("%s\n", libcdst);
-	libcresult = strlcpy(libcdst, libcsrc, 12);
-	printf("%s\n", libcdst);
-	printf("%zu\n", libcresult);
-
-	return 0;
 }

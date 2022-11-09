@@ -8,3 +8,4 @@ main.c
 test.c
 test_*.c
 libft.h
+.vscode/launch.json
