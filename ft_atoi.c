@@ -16,30 +16,32 @@ int	ft_atoi(const char *str)
 {
 	int	result;
 	int	x;
+	int	sign;
 
 	result = 0;
 	x = 0;
+	sign = 1;
 	while (str[x] == ' ')
 		x++;
 	if (str[x] == '+' || str[x] == '-')
 	{
 		if (str[x] == '-')
-			x = -1;
+			sign = -1;
+		x++;
 	}
-
 	while (ft_isdigit(str[x]))
 	{
 		result = (result * 10) + (str[x] - '0');
 		x++;
 	}
-	return (result);
+	return (result * sign);
 }
 
 #include <stdlib.h>
 #include <stdio.h>
 void main()
 {
-	char *str = "156983sd89";
+	char *str = "     -156983sd89";
 
 	printf("resultat libc : %d\n", atoi(str));
 	printf("resultat libft : %d\n", ft_atoi(str));
