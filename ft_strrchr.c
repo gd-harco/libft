@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 14:25:55 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/11/08 15:37:56 by gd-harco         ###   ########lyon.fr   */
+/*   Created: 2022/11/10 16:09:12 by gd-harco          #+#    #+#             */
+/*   Updated: 2022/11/10 16:09:12 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
-{
-	size_t		x;
-	size_t		y;
+#include <stdlib.h>
 
-	if (needle == NULL)
-		return ((char *)haystack);
+char	*ft_strrchr(const char *s, int c)
+{
+	int	x;
+
 	x = 0;
-	while (x < len && haystack[x])
+	if (c == '\0')
 	{
-		if (haystack[x] == needle[0])
-		{
-			y = 0;
-			while (haystack[x + y] == needle[y] && (x + y) < len)
-			{
-				y++;
-				if (!needle[y])
-					return (&haystack[x]);
-			}
-		}
-		x++;
+		while (*s)
+			s++;
+		return ((char *)s);
+	}
+	
+	while (*s)
+	{
+		if (*s == c)
+			return ((char *) s);
+		s++;
 	}
 	return (NULL);
 }

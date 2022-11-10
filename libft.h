@@ -31,6 +31,7 @@ int		ft_isprint(int c);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+int	ft_atoi(const char *str);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strstr(char *sourcestring, char *tofind);
 char	*ft_itoa(int n);

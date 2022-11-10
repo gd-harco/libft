@@ -16,6 +16,12 @@ char	*ft_strchr(const char *s, int c)
 	int	x;
 
 	x = 0;
+	if (c == '\0')
+	{
+		while (*s)
+			s++;
+		return ((char *)s);
+	}
 	while (*s)
 	{
 		if (*s == c)

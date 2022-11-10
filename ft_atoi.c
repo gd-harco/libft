@@ -36,14 +36,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-
-#include <stdlib.h>
-#include <stdio.h>
-void main()
-{
-	char *str = "     -156983sd89";
-
-	printf("resultat libc : %d\n", atoi(str));
-	printf("resultat libft : %d\n", ft_atoi(str));
-}
-
