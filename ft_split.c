@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int static	get_nb_word(char const *s, char c)
+static int	get_nb_word(char const *s, char c)
 {
 	int	index;
 	int	x;
@@ -28,14 +28,14 @@ int static	get_nb_word(char const *s, char c)
 	return (index);
 }
 
-int static	in_charset(char c, char charset)
+static int	in_charset(char c, char charset)
 {
 	if (c == charset)
 		return (1);
 	return (0);
 }
 
-void static	splitnwrite(char **dest, const char *str, char charset, int nbr)
+static void	splitnwrite(char **dest, const char *str, char charset, int nbr)
 {
 	int		i;
 	int		j;

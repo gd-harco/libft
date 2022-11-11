@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-int static	get_size(int n, int index, int count)
+static int	get_size(int n, int index, int count)
 {
 	if (n / index > 0)
 		return (get_size(n, index * 10, count + 1));
 	return (count);
 }
 
-char static	*negative_itoa(int n)
+static char	*negative_itoa(int n)
 {
 	int		strsize;
 	int		x;

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int static	lookforstring(char *s1, char *s2)
+static int	lookforstring(char *s1, char *s2)
 {
 	int	x;
 
