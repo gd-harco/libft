@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t static	multiply(size_t count, size_t size)
+static size_t	multiply(size_t count, size_t size)
 {
 	size_t	result;
 
