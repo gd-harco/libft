@@ -11,26 +11,25 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
 	int	x;
 
-	x = 0;
+	x = ft_strlen(s) - 1;
 	if (c == '\0')
 	{
 		while (*s)
 			s++;
 		return ((char *)s);
 	}
-	
-	while (*s)
+
+	while (s[x])
 	{
-		if (*s == c)
-			return ((char *) s);
-		s++;
+		if (s[x] == c)
+			return ((char *) s + x);
+		x--;
 	}
 	return (NULL);
 }
