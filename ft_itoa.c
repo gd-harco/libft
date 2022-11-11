@@ -9,7 +9,8 @@
 /*   Updated: 2022/10/27 19:08:09 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+
+#include "libft.h"
 
 int static	get_size(int n, int index, int count)
 {

@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/21 22:32:49 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)

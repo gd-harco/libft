@@ -9,7 +9,8 @@
 /*   Updated: 2022/10/22 19:17:07 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
