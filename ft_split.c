@@ -59,7 +59,7 @@ void static	splitnwrite(char **dest, const char *str, char charset, int nbr)
 		}
 		i++;
 	}
-	dest[i] = 0;
+	dest[i] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
