@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gd-harco <gd-harco@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: gd-harco <gd-harco@student.42lyon.fr>                                */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 19:46:40 by gd-harco          #+#    #+#             */
 /*   Updated: 2022/11/07 14:21:37 by gd-harco         ###   ########lyon.fr   */
