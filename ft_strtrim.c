@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:27:19 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/11/11 16:59:00 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 17:42:46 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ static char	*look_for_start(char const *s, char const *set)
 	char	*start;
 
 	start = (char *)s;
-
-	while (start)
+	while (*start)
 	{
 		if (in_charset((char)*start, (char *)set))
 		{
@@ -42,7 +41,6 @@ static char	*look_for_start(char const *s, char const *set)
 		start++;
 	}
 	return (NULL);
-
 }
 
 static char	*look_for_end(char const *s, char const *set)
@@ -59,11 +57,10 @@ static char	*look_for_end(char const *s, char const *set)
 			return (end);
 		}
 		end--;
+		len--;
 	}
 	return (NULL);
-
 }
-
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -73,8 +70,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*result;
 	int		x;
 
-	end = look_for_end(s1, set);
+	if (!s1 || !set)
+		return (NULL);
 	start = look_for_start(s1, set);
+	end = look_for_end(s1, set);
 	len = end - start;
 	result = malloc(sizeof(char) * (len + 1));
 	if (!result)
