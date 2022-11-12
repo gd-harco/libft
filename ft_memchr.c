@@ -6,13 +6,13 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 12:58:47 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/11/12 12:36:51 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2022/11/12 16:36:28 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	int	x;
 
