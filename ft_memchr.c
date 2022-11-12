@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 12:58:47 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/11/11 14:04:50 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2022/11/12 12:36:51 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*memchr(const void *s, int c, size_t n)
 	while (n > 0)
 	{
 		if (((char *)s)[x] == c)
-			return (s + x);
+			return ((void *)(s + x));
 		x++;
 		n--;
 	}
