@@ -46,11 +46,12 @@ OBJS = $(SRCS:.c=.o)
 
 #CONSIGNE
 
-all: $(NAME)
+all: $(NAME) clean
 
 $(NAME):
 	$(CC) $(CFLAG) $(SRCS)
 	$(ARCHIVE)
+
 
 clean:
 	rm -f $(OBJS)
