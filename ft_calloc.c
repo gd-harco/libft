@@ -18,21 +18,21 @@ static size_t	multiply(size_t count, size_t size)
 
 	result = count * size;
 	if (size != count / result)
-		return (NULL);
+		return (0);
 	return (size);
 }
 
 void	*ft_calloc( size_t count, size_t size )
 {
 	void	*result;
-	size_t	malloc_size;
+	size_t	multiply_result;
 
-	malloc_size = multiply(count, size);
-	if (malloc_size == NULL)
+	multiply_result = multiply(count, size);
+	if (multiply_result == 0)
 		return (NULL);
-	result = malloc(malloc_size);
+	result = malloc(multiply_result);
 	if (result == NULL)
 		return (NULL);
-	ft_bzero(result, malloc_size);
+	ft_bzero(result, multiply_result);
 	return (result);
 }
