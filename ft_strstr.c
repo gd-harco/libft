@@ -31,19 +31,21 @@ static int	lookforstring(char *s1, char *s2)
 	return (0);
 }
 
-char	*ft_strstr(char *sourcestring, char *tofind)
+char	*ft_strstr(char *haystack, char *needle)
 {
 	char	*result;
 
-	while (*sourcestring)
+	if (ft_strlen(needle) == 0)
+		return (haystack);
+	result = haystack;
+	while (*result)
 	{
-		if (*sourcestring == tofind[0])
+		if (*result == needle[0])
 		{
-			result = sourcestring;
-			if (lookforstring(sourcestring, tofind) == 0)
+			if (lookforstring(result, needle) == 0)
 				return (result);
 		}
-		*sourcestring++;
+		result++;
 	}
 	return (NULL);
 }
