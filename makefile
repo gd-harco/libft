@@ -44,7 +44,6 @@ SRCS = 	ft_atoi.c\
 HEADER = libf.h
 OBJS = $(SRCS:.c=.o)
 
-#CONSIGNE
 
 all: $(NAME) clean
 
