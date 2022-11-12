@@ -1,8 +1,8 @@
 #Variables
 NAME = libft.a
 CC = gcc
-CFLAG = -g -Wall -Werror -Wextra
-ARCHIVE = ar -r $(NAME)
+CFLAG = -c -Wall -Werror -Wextra
+ARCHIVE = ar -r $(NAME) $(OBJS)
 
 SRCS = 	ft_atoi.c\
 		ft_bzero.c\
@@ -42,12 +42,14 @@ SRCS = 	ft_atoi.c\
 		ft_toupper.c\
 
 HEADER = libf.h
-OBJS = $(SRCS: .c=.o)
+OBJS = $(SRCS:.c=.o)
 
 #CONSIGNE
 
-all:
-	$(CC) $(CFLAG)
+all: $(NAME)
+
+$(NAME):
+	$(CC) $(CFLAG) $(SRCS)
 	$(ARCHIVE)
 
 clean:
@@ -56,5 +58,4 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean
-	all
+re: fclean all
