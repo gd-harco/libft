@@ -14,8 +14,8 @@
 
 static int	get_length(char const *s, unsigned int start, size_t len)
 {
-	int	x;
-	int	y;
+	size_t	x;
+	size_t	y;
 
 	x = start;
 	y = 0;
