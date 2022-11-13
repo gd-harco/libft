@@ -45,12 +45,11 @@ HEADER = libf.h
 OBJS = $(SRCS:.c=.o)
 
 
-all: $(NAME) clean
+all: $(NAME)
 
 $(NAME):
 	$(CC) $(CFLAG) $(SRCS)
 	$(ARCHIVE)
-
 
 clean:
 	rm -f $(OBJS)
@@ -59,3 +58,7 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAG) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)

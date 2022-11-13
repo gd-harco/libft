@@ -14,18 +14,20 @@
 
 static int	get_nb_word(char const *s, char c)
 {
-	int	index;
+	int	nb_word;
 	int	x;
 
-	x = 0;
-	index = 0;
+	x = 1;
+	nb_word = 0;
 	while (s[x])
 	{
-		if (s[x] == c)
-			index++;
+		if (s[x] == c && s[x-1] != c)
+			nb_word++;
 		x++;
 	}
-	return (index);
+	if (s[x-1] != c)
+		nb_word++;
+	return (nb_word);
 }
 
 static int	in_charset(char c, char charset)
@@ -56,10 +58,12 @@ static void	splitnwrite(char **dest, const char *str, char charset, int nbr)
 				temp[j++] = *str++;
 			temp[j] = '\0';
 			dest[i] = temp;
+			free(temp);
 		}
 		i++;
 	}
 	dest[i] = NULL;
+	free(temp);
 }
 
 char	**ft_split(char const *s, char c)
@@ -68,7 +72,7 @@ char	**ft_split(char const *s, char c)
 	char	**big_table;
 
 	nb_word = get_nb_word(s, c);
-	big_table = malloc(sizeof(char *) * (nb_word +1));
+	big_table = malloc(sizeof(char *) * (nb_word + 1));
 	if (big_table == NULL)
 		return (NULL);
 	splitnwrite(big_table, s, c, nb_word);
