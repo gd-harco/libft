@@ -21,11 +21,11 @@ static int	get_nb_word(char const *s, char c)
 	nb_word = 0;
 	while (s[x])
 	{
-		if (s[x] == c && s[x-1] != c)
+		if (s[x] == c && s[x - 1] != c)
 			nb_word++;
 		x++;
 	}
-	if (s[x-1] != c)
+	if (s[x - 1] != c)
 		nb_word++;
 	return (nb_word);
 }
@@ -63,7 +63,6 @@ static void	splitnwrite(char **dest, const char *str, char charset, int nbr)
 		i++;
 	}
 	dest[i] = NULL;
-	free(temp);
 }
 
 char	**ft_split(char const *s, char c)
