@@ -19,20 +19,22 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (!dst && !src)
 		return (NULL);
 	x = 0;
-	if (src <= dst)
+	if (src < dst)
 	{
-		x = -1;
-		while (++x < len)
-			((char *)dst)[x] = ((char *)src)[x];
-		return (dst);
-	}
-	else
-	{
-		while (x < len)
+		if (len == 0)
+			return (dst);
+		x = len - 1;
+		while (x > 0)
 		{
 			((char *)dst)[x] = ((char *)src)[x];
-			x++;
+			x--;
 		}
+		((char *)dst)[x] = ((char *)src)[x];
 		return (dst);
 	}
+	else if (src > dst)
+	{
+		return (ft_memcpy(dst, src, len));
+	}
+	return (dst);
 }
