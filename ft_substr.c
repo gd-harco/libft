@@ -19,12 +19,15 @@ static int	get_length(char const *s, unsigned int start, size_t len)
 
 	x = start;
 	y = 0;
-	while (s[x] && x < len - 1)
+	if (len == start)
+		return (1);
+		//dddd
+	while (s[x] && x < (len + start))
 	{
 		x++;
 		y++;
 	}
-	return (y + 1);
+	return (y);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -34,7 +37,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int		x;
 
 	result_length = get_length(s, start, len);
-	result = malloc(sizeof(char) * result_length);
+	result = malloc(sizeof(char) * (result_length + 1));
 	if (result == NULL)
 		return (NULL);
 	x = 0;
