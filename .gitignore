@@ -14,3 +14,4 @@ libft.h
 a.out.dSYM/Contents/Info.plist
 .vscode/settings.json
 libft.a
+*.o
