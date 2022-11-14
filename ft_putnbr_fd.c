@@ -16,20 +16,19 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483647 -1)
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		write(fd, "-2147483648", 11);
 	}
-	if (n < 0)
+	else if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
 		ft_putnbr_fd((-1 * n), fd);
 	}
-	if (n >= 10)
+	else if (n >= 10)
 	{
 		ft_putnbr_fd((n / 10), fd);
 		ft_putchar_fd((n % 10 + '0'), fd);
 	}
-	if (10 > n && n >= 0)
+	else if (10 > n && n >= 0)
 	{
 		ft_putchar_fd((n + '0'), fd);
 	}
