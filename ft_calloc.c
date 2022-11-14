@@ -12,27 +12,13 @@
 
 #include "libft.h"
 
-static size_t	multiply(size_t count, size_t size)
-{
-	size_t	result;
-
-	result = count * size;
-	if (size != count / result)
-		return (0);
-	return (size);
-}
-
 void	*ft_calloc( size_t count, size_t size )
 {
 	void	*result;
-	size_t	multiply_result;
 
-	multiply_result = multiply(count, size);
-	if (multiply_result == 0)
-		return (NULL);
-	result = malloc(multiply_result);
+	result = malloc(count * size);
 	if (result == NULL)
 		return (NULL);
-	ft_bzero(result, multiply_result);
+	ft_bzero(result, count * size);
 	return (result);
 }
