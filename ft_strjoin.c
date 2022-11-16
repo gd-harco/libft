@@ -14,8 +14,8 @@
 
 static char	*joning(char *result, char *s2, char *s1, int fsize)
 {
-	int x;
-	int ss1;
+	int	x;
+	int	ss1;
 
 	ss1 = ft_strlen(s1);
 	x = 0;
