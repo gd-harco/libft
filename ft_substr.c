@@ -21,8 +21,10 @@ static int	get_length(char const *s, unsigned int start, size_t len)
 		return (0);
 	x = start;
 	y = 0;
-	if (len == start)
+	if (len == 0)
 		return (0);
+	if (len == start)
+		return (1);
 	while (s[x] && x < (len + start))
 	{
 		x++;
