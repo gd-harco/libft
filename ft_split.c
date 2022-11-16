@@ -17,7 +17,7 @@ static int	get_word_length(const char *s, char charset)
 	int	x;
 
 	x = 0;
-	while (s[x] != charset)
+	while (s[x] && s[x] != charset)
 		x++;
 	return (x);
 }
