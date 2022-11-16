@@ -12,22 +12,23 @@
 
 #include "libft.h"
 
-static char	*joning(char *result, char *s2, char *s1, int fsize)
+static char	*joning(char *result, char *s2, char *s1)
 {
 	int	x;
-	int	ss1;
+	int	y;
 
-	ss1 = ft_strlen(s1);
 	x = 0;
-	while (x < fsize)
+	y = 0;
+	while (s1[x])
 	{
-		while (x < ss1)
-		{
-			result[x] = s1[x];
-			x++;
-		}
-		result[x] = s2[x - ss1];
+		result[x] = s1[x];
 		x++;
+	}
+	while (s2[y])
+	{
+		result[x] = s2[y];
+		x++;
+		y++;
 	}
 	result[x] = '\0';
 	return (result);
@@ -44,9 +45,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	size_s1 = ft_strlen (s1);
 	size_s2 = ft_strlen (s2);
-	joined_size = (size_s1 + size_s2 + 1);
-	result = malloc(sizeof(char) * joined_size);
+	joined_size = (size_s1 + size_s2);
+	result = malloc(sizeof(char) * joined_size + 1);
 	if (!result)
 		return (NULL);
-	return (joning(result, (char *)s2, (char *)s1, joined_size));
+	return (joning(result, (char *)s2, (char *)s1));
 }
