@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	x = ft_strlen(s);
 	while (x >= 0)
 	{
-		if (s[x] == c)
+		if (s[x] == (c % 256))
 			return ((char *) s + x);
 		x--;
 	}
