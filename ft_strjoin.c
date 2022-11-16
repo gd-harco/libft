@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		size_s1;
 	int		size_s2;
 
+	if (!s1 || !s2)
+		return (NULL);
 	size_s1 = ft_strlen (s1);
 	size_s2 = ft_strlen (s2);
 	joined_size = (size_s1 + size_s2 + 1);
