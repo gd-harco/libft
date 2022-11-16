@@ -27,18 +27,16 @@ static int	get_nb_word(char const *s, char c)
 	int	nb_word;
 	int	x;
 
-	x = 1;
+	x = 0;
 	nb_word = 0;
 	while (s[x])
 	{
-		if (s[x] == c && s[x - 1] != c)
+		if (s[x] != c)
 			nb_word++;
-		x++;
-	}
-	if (nb_word != 0)
-	{
-		if (s[x - 1] != c)
-			nb_word++;
+		while (s[x] && s[x] != c)
+			x++;
+		if (s[x])
+			x++;
 	}
 	return (nb_word);
 }
