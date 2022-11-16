@@ -17,6 +17,8 @@ static int	get_length(char const *s, unsigned int start, size_t len)
 	size_t	x;
 	size_t	y;
 
+	if (start > ft_strlen(s))
+		return (0);
 	x = start;
 	y = 0;
 	if (len == start)
