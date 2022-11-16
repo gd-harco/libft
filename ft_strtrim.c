@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:27:19 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/11/15 11:24:05 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2022/11/16 17:13:02 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	start = look_for_start(s1, set);
 	if (!start)
-		return ("");
+		return (ft_strdup(""));
 	end = (look_for_end(s1, set) + 1);
 	len = end - start;
 	result = malloc(sizeof(char) * (len + 1));
