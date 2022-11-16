@@ -12,13 +12,6 @@
 
 #include "libft.h"
 
-static int	get_size(int n, int index, int count)
-{
-	if (n / index > 0)
-		return (get_size(n, index * 10, count + 1));
-	return (count);
-}
-
 static char	*itoa_min_null(int n)
 {
 	if (n == -2147483648)
@@ -26,49 +19,46 @@ static char	*itoa_min_null(int n)
 	return (ft_strdup("0"));
 }
 
-static char	*negative_itoa(int n)
+static char	*filling(int n, int x, char *converted)
 {
-	int		strsize;
-	int		x;
-	char	*converted;
-
-	strsize = get_size(n, 1, 1);
-	converted = malloc(sizeof(char) * strsize + 1);
-	if (!converted)
-		return (NULL);
-	x = strsize - 1;
-	converted[strsize] = '\0';
-	while (x > 0)
+	if (n < 0)
 	{
-		converted[x] = (n % 10) + '0';
-		n /= 10;
-		x--;
+		n *= -1;
+		while (x > 0)
+		{
+			converted[--x] = (n % 10) + '0';
+			n /= 10;
+		}
+		converted[x] = '-';
 	}
-	converted[x] = '-';
+	else
+	{
+		while (x > 0)
+		{
+			converted[--x] = (n % 10) + '0';
+			n /= 10;
+		}
+	}
 	return (converted);
 }
 
 char	*ft_itoa(int n)
 {
-	int		strsize;
 	int		x;
+	int		nb;
 	char	*converted;
 
 	if ((n == (-2147483647 -1)) || n == 0)
 		return (itoa_min_null(n));
+	x = 1;
+	nb = n;
 	if (n < 0)
-		return (negative_itoa(n * -1));
-	strsize = get_size(n, 1, 1);
-	converted = malloc(sizeof(char) * strsize);
+		x++;
+	while (!(nb < 10 && nb > -10) && x++)
+		nb /= 10;
+	converted = malloc(sizeof(char) * x + 1);
 	if (!converted)
 		return (NULL);
-	x = strsize - 2;
-	converted[strsize - 1] = '\0';
-	while (x >= 0)
-	{
-		converted[x] = (n % 10) + '0';
-		n /= 10;
-		x--;
-	}
-	return (converted);
+	converted[x] = '\0';
+	return (filling(n, x, converted));
 }
