@@ -6,7 +6,7 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 12:15:00 by gd-harco          #+#    #+#              #
-#    Updated: 2022/11/17 12:15:00 by gd-harco         ###   ########lyon.fr    #
+#    Updated: 2022/11/17 16:49:13 by gd-harco         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,8 +51,19 @@ SRCS = 	ft_atoi.c\
 		ft_tolower.c\
 		ft_toupper.c\
 
+SRCS_BONUS = ft_lstnew.c\
+			 ft_lstadd_front.c\
+			 ft_lstsize.c\
+			 ft_lstlast.c\
+			 ft_lstadd_back.c\
+			 ft_lstdelone.c\
+			 ft_lstclear.c\
+			 ft_lstiter.c\
+			 ft_lstmap.c
+
 HEADER = libft.h
 OBJS = $(SRCS:.c=.o)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 
 all: $(NAME)
@@ -62,6 +73,10 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(ARCHIVE)
+
+bonus: $(NAME)
+	$(CC) $(CFLAG) $(SRCS_BONUS)
+	ar -q $(NAME) $(OBJS_BONUS)
 
 clean:
 	rm -f $(OBJS)
