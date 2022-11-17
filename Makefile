@@ -6,7 +6,7 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 12:15:00 by gd-harco          #+#    #+#              #
-#    Updated: 2022/11/17 16:49:13 by gd-harco         ###   ########lyon.fr    #
+#    Updated: 2022/11/17 17:44:37 by gd-harco         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@
 NAME = libft.a
 CC = gcc
 CFLAG =-c -Wall -Werror -Wextra
-ARCHIVE = ar -r $(NAME) $(OBJS)
 
 SRCS = 	ft_atoi.c\
 		ft_bzero.c\
@@ -51,15 +50,15 @@ SRCS = 	ft_atoi.c\
 		ft_tolower.c\
 		ft_toupper.c\
 
-SRCS_BONUS = ft_lstnew.c\
-			 ft_lstadd_front.c\
-			 ft_lstsize.c\
-			 ft_lstlast.c\
-			 ft_lstadd_back.c\
-			 ft_lstdelone.c\
-			 ft_lstclear.c\
-			 ft_lstiter.c\
-			 ft_lstmap.c
+SRCS_BONUS = ft_lstnew_bonus.c\
+			 ft_lstadd_front_bonus.c\
+			 ft_lstsize_bonus.c\
+			 ft_lstlast_bonus.c\
+			 ft_lstadd_back_bonus.c\
+			 ft_lstdelone_bonus.c\
+			 ft_lstclear_bonus.c\
+			 ft_lstiter_bonus.c\
+			 ft_lstmap_bonus.c
 
 HEADER = libft.h
 OBJS = $(SRCS:.c=.o)
@@ -71,8 +70,8 @@ all: $(NAME)
 .c.o: %.c ${OBJS} Makefile ${HEADER}
 	$(CC) $(CFLAG) $< -o ${<:.c=.o}
 
-$(NAME): $(OBJS)
-	$(ARCHIVE)
+$(NAME): $(OBJS) Makefile ${HEADER}
+	ar -r $(NAME) $(OBJS)
 
 bonus: $(NAME)
 	$(CC) $(CFLAG) $(SRCS_BONUS)
@@ -86,6 +85,3 @@ fclean: clean
 
 re: fclean all
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAG) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
