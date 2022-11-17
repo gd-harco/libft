@@ -15,24 +15,22 @@
 int	ft_atoi(const char *str)
 {
 	int	result;
-	int	x;
 	int	sign;
 
 	result = 0;
-	x = 0;
 	sign = 1;
-	while (str[x] == ' ' || (str[x] >= 9 && str[x] <= 13))
-		x++;
-	if (str[x] == '+' || str[x] == '-')
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '+' || *str == '-')
 	{
-		if (str[x] == '-')
+		if (*str == '-')
 			sign = -1;
-		x++;
+		str++;
 	}
-	while (ft_isdigit(str[x]))
+	while (ft_isdigit(*str))
 	{
-		result = (result * 10) + (str[x] - '0');
-		x++;
+		result = (result * 10) + (*str - '0');
+		str++;
 	}
 	return (result * sign);
 }
