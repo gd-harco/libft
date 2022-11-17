@@ -5,16 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/17 12:15:00 by gd-harco          #+#    #+#              #
-#    Updated: 2022/11/17 17:44:37 by gd-harco         ###   ########lyon.fr    #
+#    Created: 2022/11/17 17:46:58 by gd-harco          #+#    #+#              #
+#    Updated: 2022/11/17 18:01:58 by gd-harco         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-#Variables
-NAME = libft.a
 CC = gcc
-CFLAG =-c -Wall -Werror -Wextra
-
+CFLAGS = -c -Wall -Werror -Wextra
+NAME = libft.a
+HEADER = libft.h
 SRCS = 	ft_atoi.c\
 		ft_bzero.c\
 		ft_calloc.c\
@@ -48,8 +47,7 @@ SRCS = 	ft_atoi.c\
 		ft_strtrim.c\
 		ft_substr.c\
 		ft_tolower.c\
-		ft_toupper.c\
-
+		ft_toupper.c
 SRCS_BONUS = ft_lstnew_bonus.c\
 			 ft_lstadd_front_bonus.c\
 			 ft_lstsize_bonus.c\
@@ -59,29 +57,33 @@ SRCS_BONUS = ft_lstnew_bonus.c\
 			 ft_lstclear_bonus.c\
 			 ft_lstiter_bonus.c\
 			 ft_lstmap_bonus.c
+DIR_OBS = objs/
 
-HEADER = libft.h
-OBJS = $(SRCS:.c=.o)
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
-
+OBJS = $(SRCS:%.c=$(DIR_OBS)%.o)
+OBJS_BONUS = $(SRCS_BONUS:%.c=$(DIR_OBS)%.o)
 
 all: $(NAME)
 
-.c.o: %.c ${OBJS} Makefile ${HEADER}
-	$(CC) $(CFLAG) $< -o ${<:.c=.o}
-
-$(NAME): $(OBJS) Makefile ${HEADER}
-	ar -r $(NAME) $(OBJS)
-
-bonus: $(NAME)
-	$(CC) $(CFLAG) $(SRCS_BONUS)
+bonus: $(OBJS_BONUS) Makefile $(HEADER)
 	ar -q $(NAME) $(OBJS_BONUS)
 
+$(NAME): $(OBJS) Makefile $(HEADER)
+	ar -r $(NAME) $(OBJS)
+
+$(OBJS) : | $(DIR_OBS)
+
+$(OBJS_BONUS) : | $(DIR_OBS)
+
+$(DIR_OBS)%.o : %.c $(HEADER) Makefile
+	$(CC) $(CFLAGS) -I $(HEADER) $< -o $@
+
+$(DIR_OBS):
+	mkdir -p $(DIR_OBS)
+
 clean:
-	rm -f $(OBJS)
+	rm -rf $(DIR_OBS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm $(NAME)
 
 re: fclean all
-
