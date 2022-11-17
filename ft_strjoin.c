@@ -14,8 +14,8 @@
 
 static char	*joning(char *result, char *s2, char *s1)
 {
-	int	x;
-	int	y;
+	size_t	x;
+	size_t	y;
 
 	x = 0;
 	y = 0;
@@ -36,10 +36,10 @@ static char	*joning(char *result, char *s2, char *s1)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		joined_size;
-	char	*result;
-	int		size_s1;
-	int		size_s2;
+	size_t		joined_size;
+	char		*result;
+	size_t		size_s1;
+	size_t		size_s2;
 
 	if (!s1 || !s2)
 		return (NULL);

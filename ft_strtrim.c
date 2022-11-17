@@ -6,15 +6,15 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:27:19 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/11/16 17:13:02 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2022/11/17 21:41:53 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	in_charset(char c, char *charset)
+static size_t	in_charset(char c, char *charset)
 {
-	int	x;
+	size_t	x;
 
 	x = 0;
 	while (charset[x])
@@ -67,7 +67,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*end;
 	size_t	len;
 	char	*result;
-	int		x;
+	size_t	x;
 
 	if (!s1 || !set)
 		return (NULL);

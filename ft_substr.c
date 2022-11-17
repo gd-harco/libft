@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	get_length(char const *s, unsigned int start, size_t len)
+static size_t	get_length(char const *s, unsigned int start, size_t len)
 {
 	size_t	x;
 	size_t	y;
@@ -36,8 +36,8 @@ static int	get_length(char const *s, unsigned int start, size_t len)
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*result;
-	int		result_length;
-	int		x;
+	size_t	result_length;
+	size_t	x;
 
 	if (s == NULL)
 		return (NULL);

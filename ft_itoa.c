@@ -44,9 +44,9 @@ static char	*filling(int n, int x, char *converted)
 
 char	*ft_itoa(int n)
 {
-	int		x;
-	int		nb;
-	char	*converted;
+	size_t		x;
+	size_t		nb;
+	char		*converted;
 
 	if ((n == (-2147483647 -1)) || n == 0)
 		return (itoa_min_null(n));
