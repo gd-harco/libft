@@ -2,16 +2,13 @@
 sujet/libft_fr.subject.pdf
 a.out
 main.c
-./vscode
+./vscode/*
 *.exe
-.vscode/tasks.json
 test.c
 test_*.c
 libft.h
-.vscode/launch.json
 *.swp
 ./a.out.dSYM
 a.out.dSYM/Contents/Info.plist
-.vscode/settings.json
 libft.a
 *.o
