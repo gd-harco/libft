@@ -70,6 +70,7 @@ char	**ft_split(char const *s, char c)
 		s = s + go_to_next_word(s, c);
 		len = get_word_length(s, c);
 		dest[i] = ft_substr(s, 0, len);
+		//TODO : sécuriser et tout vider en cas de malloc échoué
 		s = s + len;
 		i++;
 	}
