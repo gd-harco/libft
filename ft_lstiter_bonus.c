@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:44:14 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/11/17 21:50:31 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2022/11/18 14:24:15 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!f)
-		return (NULL);
+		return ;
 	while (lst)
 	{
 		f(lst->content);

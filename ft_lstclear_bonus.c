@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:42:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/11/17 21:51:10 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2022/11/18 14:24:37 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*f)(void*))
 	t_list	*buffer;
 
 	if (!f)
-		return (NULL);
+		return ;
 	while (*lst)
 	{
 		buffer = (*lst)->next;
