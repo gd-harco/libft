@@ -15,7 +15,7 @@
 static char	**free_all(char **dest, size_t i)
 {
 	while (i--)
-		free(*dest++);
+		free(dest[i]);
 	free(dest);
 	return (NULL);
 }
@@ -79,7 +79,7 @@ char	**ft_split(char const *s, char c)
 		len = get_word_length(s, c);
 		dest[i] = ft_substr(s, 0, len);
 		if (!dest[i])
-			return (free_all(dest, i--));
+			return (free_all(dest, i));
 		s = s + len;
 		i++;
 	}
