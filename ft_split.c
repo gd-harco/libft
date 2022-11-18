@@ -12,6 +12,14 @@
 
 #include "libft.h"
 
+static char	**free_all(char **dest, size_t i)
+{
+	while (i--)
+		free(*dest++);
+	free(dest);
+	return (NULL);
+}
+
 static size_t	get_word_length(const char *s, char charset)
 {
 	size_t	x;
@@ -70,7 +78,8 @@ char	**ft_split(char const *s, char c)
 		s = s + go_to_next_word(s, c);
 		len = get_word_length(s, c);
 		dest[i] = ft_substr(s, 0, len);
-		//TODO : sécuriser et tout vider en cas de malloc échoué
+		if (!dest[i])
+			return (free_all(dest, i--));
 		s = s + len;
 		i++;
 	}
