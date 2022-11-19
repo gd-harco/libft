@@ -6,11 +6,11 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 17:46:58 by gd-harco          #+#    #+#              #
-#    Updated: 2022/11/19 12:38:11 by gd-harco         ###   ########lyon.fr    #
+#    Updated: 2022/11/19 14:35:51 by gd-harco         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = cc
 CFLAGS = -c -Wall -Werror -Wextra
 NAME = libft.a
 HEADER = libft.h
@@ -88,4 +88,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re
+.PHONY: clean fclean re bonus

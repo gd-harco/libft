@@ -21,7 +21,6 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t elementCount, size_t elementSize);

@@ -11,26 +11,39 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
+
+static int	ft_overflow(int sign)
+{
+	if (sign < 0)
+		return ((int)LONG_MIN);
+	else
+		return ((int)LONG_MAX);
+}
 
 int	ft_atoi(const char *str)
 {
-	int	result;
-	int	sign;
+	long	result;
+	int		sign;
+	char	*s;
 
 	result = 0;
 	sign = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '+' || *str == '-')
+	s = (char *)str;
+	while (*s == ' ' || (*s >= 9 && *s <= 13))
+		s++;
+	if (*s == '+' || *s == '-')
 	{
-		if (*str == '-')
+		if (*s == '-')
 			sign = -1;
-		str++;
+		s++;
 	}
-	while (ft_isdigit(*str))
+	while (ft_isdigit(*s))
 	{
-		result = (result * 10) + (*str - '0');
-		str++;
+		if (result != (result * 10 + *s - '0') / 10)
+			return (ft_overflow(sign));
+		result = (result * 10) + (*s - '0');
+		s++;
 	}
-	return (result * sign);
+	return ((int)result * sign);
 }
