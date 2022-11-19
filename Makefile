@@ -6,7 +6,7 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 17:46:58 by gd-harco          #+#    #+#              #
-#    Updated: 2022/11/17 21:28:29 by gd-harco         ###   ########lyon.fr    #
+#    Updated: 2022/11/19 12:38:11 by gd-harco         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,3 +87,5 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+.PHONY: clean fclean re
