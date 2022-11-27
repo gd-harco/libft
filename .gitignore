@@ -13,3 +13,4 @@ libft.h
 a.out.dSYM/Contents/Info.plist
 libft.a
 *.o
+amain.c
