@@ -39,7 +39,6 @@ size_t	ft_putchar_fd(char c, int fd);
 size_t	ft_putendl_fd(char *s, int fd);
 size_t	ft_putnbr_fd(int n, int fd, size_t size);
 size_t	ft_putstr_fd(char *s, int fd);
-size_t	ft_putnbr_base_fd(int nbr, char *base, int fd, size_t size);
 char	*ft_strchr(const char *s, int c);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);

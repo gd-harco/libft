@@ -15,9 +15,7 @@
 size_t	ft_putstr_fd(char *s, int fd)
 {
 	if (s)
-	{
-		write(fd, s, ft_strlen(s));
-		return (ft_strlen(s));
-	}
-	return (0);
+		return (write(fd, s, ft_strlen(s)));
+	else
+		return (write(fd, "(null)", 6));
 }

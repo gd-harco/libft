@@ -6,7 +6,7 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 17:46:58 by gd-harco          #+#    #+#              #
-#    Updated: 2022/11/27 16:52:35 by gd-harco         ###   ########lyon.fr    #
+#    Updated: 2022/12/02 11:40:02 by gd-harco         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,8 +47,7 @@ SRCS = 	ft_atoi.c\
 		ft_strtrim.c\
 		ft_substr.c\
 		ft_tolower.c\
-		ft_toupper.c\
-		ft_putnbr_base_fd.c
+		ft_toupper.c
 
 SRCS_BONUS = ft_lstnew_bonus.c\
 			 ft_lstadd_front_bonus.c\
