@@ -15,6 +15,7 @@ C_FILES =		char/ft_isalnum.c	\
 				io/ft_putendl_fd.c	\
 				io/ft_putnbr_fd.c	\
 				io/ft_putstr_fd.c	\
+				io/ft_printf.c		\
 \
 				list/ft_lstadd_back_bonus.c		\
 				list/ft_lstadd_front_bonus.c	\
