@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 12:13:03 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/12/05 10:26:57 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2022/12/07 21:40:39 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
+#include <stdlib.h>
 
 t_list	*ft_lstnew(void *content)
 {

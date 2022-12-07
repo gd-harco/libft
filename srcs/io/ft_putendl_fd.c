@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "io.h"
+#include "str.h"
+#include <unistd.h>
 
 size_t	ft_putendl_fd(char *s, int fd)
 {
