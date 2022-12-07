@@ -11,11 +11,13 @@ C_FILES =		char/ft_isalnum.c	\
 				char/ft_toupper.c	\
 				char/ft_tolower.c	\
 \
-				io/ft_putchar_fd.c	\
-				io/ft_putendl_fd.c	\
-				io/ft_putnbr_fd.c	\
-				io/ft_putstr_fd.c	\
-				io/ft_printf.c		\
+				io/ft_putchar_fd.c						\
+				io/ft_putendl_fd.c						\
+				io/ft_putnbr_fd.c						\
+				io/ft_putstr_fd.c						\
+				io/ft_printf.c							\
+				io/ft_GetNextLine/get_next_line.c		\
+				io/ft_GetNextLine/get_next_line_utils.c	\
 \
 				list/ft_lstadd_back_bonus.c		\
 				list/ft_lstadd_front_bonus.c	\
@@ -56,13 +58,15 @@ C_FILES =		char/ft_isalnum.c	\
 SRCS = ${addprefix srcs/, ${C_FILES}}
 
 
-HEADERS = 		${INCLUDES}char.h		\
-				${INCLUDES}io.h			\
-				${INCLUDES}libft.h		\
-				${INCLUDES}list.h		\
-				${INCLUDES}memory.h		\
-				${INCLUDES}numbers.h	\
-				${INCLUDES}str.h
+HEADERS = 		${INCLUDES}char.h				\
+				${INCLUDES}io.h					\
+				${INCLUDES}libft.h				\
+				${INCLUDES}list.h				\
+				${INCLUDES}memory.h				\
+				${INCLUDES}numbers.h			\
+				${INCLUDES}str.h				\
+				${INCLUDES}get_next_line.h		\
+
 
 INCLUDES =		includes/
 
