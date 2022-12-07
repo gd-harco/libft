@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "number.h"
+#include "numbers.h"
 
 static char	*itoa_min_null(int n)
 {

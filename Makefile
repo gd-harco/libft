@@ -1,54 +1,131 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/17 17:46:58 by gd-harco          #+#    #+#              #
-#    Updated: 2022/12/05 10:44:03 by gd-harco         ###   ########lyon.fr    #
-#                                                                              #
-# **************************************************************************** #
+NAME =			libft.a
 
-CC = cc
-CFLAGS = -c -Wall -Werror -Wextra
-NAME = libft.a
-HEADERFOLDER = includes/
+NAME_DEBUG =	libft_debug.a
 
-# srcs files for all different cat
-SRCS_CHAR = srcs/char/*
-SRCS_IO = srcs
-SRCS =
 
-DIR_OBS = objs/
+C_FILES =		char/ft_isalnum.c	\
+				char/ft_isalpha.c	\
+				char/ft_isascii.c	\
+				char/ft_isdigit.c	\
+				char/ft_isprint.c	\
+				char/ft_isspace.c	\
+				char/ft_toupper.c	\
+				char/ft_tolower.c	\
+\
+				io/ft_putchar_fd.c					\
+				io/ft_putendl_fd.c					\
+				io/ft_putnbr_fd.c					\
+				io/ft_putstr_fd.c					\
+				io/ft_putstr_bonus.c				\
+\
+				list/ft_lstadd_back_bonus.c			\
+				list/ft_lstadd_front_bonus.c			\
+				list/ft_lstclear_bonus.c				\
+				list/ft_lstdelone_bonus.c			\
+				list/ft_lstiter_bonus.c				\
+				list/ft_lstlast_bonus.c				\
+				list/ft_lstmap_bonus.c				\
+				list/ft_lstnew_bonus.c				\
+				list/ft_lstsize_bonus.c				\
+\
+				memory/ft_bzero.c		\
+				memory/ft_calloc.c		\
+				memory/ft_memchr.c		\
+				memory/ft_memcmp.c		\
+				memory/ft_memcpy.c		\
+				memory/ft_memmove.c	\
+				memory/ft_memset.c		\
+\
+				numbers/ft_atoi.c	\
+				numbers/ft_itoa.c	\
+\
+				str/ft_split.c			\
+				str/ft_strchr.c				\
+				str/ft_strdup.c				\
+				str/ft_striteri.c			\
+				str/ft_strjoin.c				\
+				str/ft_strlcat.c				\
+				str/ft_strlcpy.c				\
+				str/ft_strlen.c				\
+				str/ft_strmapi.c				\
+				str/ft_strncmp.c				\
+				str/ft_strnstr.c				\
+				str/ft_strrchr.c				\
+				str/ft_strtrim.c				\
+				str/ft_substr.c
 
-OBJS = $(SRCS:%.c=$(DIR_OBS)%.o)
-OBJS_BONUS = $(SRCS_BONUS:%.c=$(DIR_OBS)%.o)
+SRCS = ${addprefix srcs/, ${C_FILES}}
 
-all: $(NAME)
 
-bonus: $(OBJS_BONUS) Makefile $(HEADER)
-	ar -q $(NAME) $(OBJS_BONUS)
+HEADERS = 		${INCLUDES}char.h			\
+				${INCLUDES}io.h				\
+				${INCLUDES}list.h		\
+				${INCLUDES}mem.h				\
+				${INCLUDES}numbers.h			\
+				${INCLUDES}string.h			\
+				${INCLUDES}libft.h
 
-$(NAME): $(OBJS) Makefile $(HEADER)
-	ar -r $(NAME) $(OBJS)
+INCLUDES =		includes/
 
-$(OBJS) : | $(DIR_OBS)
 
-$(OBJS_BONUS) : | $(DIR_OBS)
+DIR_OBJS = 		./.objs/
 
-$(DIR_OBS)%.o : %.c $(HEADER) Makefile
-	$(CC) $(CFLAGS) $< -o $@
+OBJS =			${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 
-$(DIR_OBS):
-	mkdir -p $(DIR_OBS)
+OBJS_DEBUG =	${addprefix ${DIR_OBJS},${SRCS:.c=_debug.o}}
+
+
+FLAGS =			-Wall -Wextra -Werror
+
+DEBUG_FLAGS	=	-g -fsanitize=address
+
+
+RMF =	 		rm -f
+
+MKDIR = 		mkdir -p
+
+
+all:			${DIR_OBJS}
+				@${MAKE} ${NAME}
+
+$(NAME):		${OBJS}
+				ar rcs ${NAME} ${OBJS}
+
+${DIR_OBJS}: Makefile
+			@echo ${OBJS} | tr ' ' '\n'\
+				| sed 's|\(.*\)/.*|\1|'\
+				| sed 's/^/${MKDIR} /'\
+				| sh -s
+			@# Prints all OBJS. 1 per line
+				@# Removes the .o file names
+				@# Adds mkdir -p at start of each lines
+				@# Executes the script (Creates all folders)
+
+${DIR_OBJS}%.o: %.c ${HEADERS} Makefile
+				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
+
+${DIR_OBJS}%_debug.o: %.c ${HEADERS} Makefile
+				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
 
 clean:
-	rm -rf $(DIR_OBS)
+				${RMF} ${OBJS} ${OBJS_DEBUG}
 
-fclean: clean
-	rm -rf $(NAME)
+fclean:			clean
+				${RMF} ${NAME} ${NAME_DEBUG}
 
-re: fclean all
+re:				fclean
+				${MAKE} all
 
-.PHONY: clean fclean re bonus
+re_debug:		fclean
+				${MAKE} debug
+
+echo_objs:
+				@echo ${OBJS}
+
+debug:			${DIR_OBJS}
+				@${MAKE} ${NAME_DEBUG} FLAGS="${FLAGS} ${DEBUG_FLAGS}"
+
+${NAME_DEBUG}: ${OBJS_DEBUG}
+				ar rcs ${NAME_DEBUG} ${OBJS_DEBUG}
+
+.PHONY:			all clean fclean re re_debug echo_objs debug

@@ -7,7 +7,6 @@ main.c
 *.exe
 test.c
 test_*.c
-libft.h
 *.swp
 ./a.out.dSYM
 a.out.dSYM/Contents/Info.plist
