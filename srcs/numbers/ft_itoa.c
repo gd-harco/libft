@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "numbers.h"
+#include "str.h"
 
 static char	*itoa_min_null(int n)
 {
