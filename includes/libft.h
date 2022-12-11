@@ -17,7 +17,8 @@
 # include "io.h"
 # include "list.h"
 # include "memory.h"
-# include "string.h"
+# include "str.h"
+# include "numbers.h"
 # include "get_next_line.h"
 
 char	*ft_itoa(int n);
