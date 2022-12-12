@@ -20,6 +20,7 @@
 # include "str.h"
 # include "numbers.h"
 # include "get_next_line.h"
+# include "array.h"
 
 char	*ft_itoa(int n);
 
