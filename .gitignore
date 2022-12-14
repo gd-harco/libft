@@ -12,5 +12,3 @@ a.out.dSYM/Contents/Info.plist
 libft.a
 *.o
 amain.c
-.objs
-a.out.dSYM
