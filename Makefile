@@ -29,13 +29,14 @@ C_FILES =		char/ft_isalnum.c	\
 				list/ft_lstnew_bonus.c			\
 				list/ft_lstsize_bonus.c			\
 \
-				memory/ft_bzero.c	\
-				memory/ft_calloc.c	\
-				memory/ft_memchr.c	\
-				memory/ft_memcmp.c	\
-				memory/ft_memcpy.c	\
-				memory/ft_memmove.c	\
-				memory/ft_memset.c	\
+				memory/ft_bzero.c		\
+				memory/ft_calloc.c		\
+				memory/ft_memchr.c		\
+				memory/ft_memcmp.c		\
+				memory/ft_memcpy.c		\
+				memory/ft_memmove.c		\
+				memory/ft_memset.c		\
+				memory/ft_free_array.c	\
 \
 				numbers/ft_atoi.c	\
 				numbers/ft_itoa.c	\
