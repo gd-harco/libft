@@ -13,3 +13,4 @@ libft.a
 *.o
 amain.c
 .objs/
+*.a
