@@ -6,7 +6,7 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 15:42:45 by gd-harco          #+#    #+#              #
-#    Updated: 2022/12/17 15:53:22 by gd-harco         ###   ########lyon.fr    #
+#    Updated: 2022/12/17 16:39:02 by gd-harco         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,8 +80,6 @@ C_FILES 		=	char/ft_isalnum.c	\
 \
 					array/ft_array_length.c
 
-
-
 HEADERS 		=	${INCLUDES}char.h				\
 					${INCLUDES}io.h					\
 					${INCLUDES}libft.h				\
@@ -138,10 +136,10 @@ ${DIR_OBJS}:
 				@# Adds mkdir -p at start of each lines
 				@# Executes the script (Creates all folders)
 
-${DIR_OBJS}%.o: %.c ${HEADERS} Makefile
+${DIR_OBJS}%.o: %.c ${HEADERS}
 				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
 
-${DIR_OBJS}%_debug.o: %.c ${HEADERS} Makefile
+${DIR_OBJS}%_debug.o: %.c ${HEADERS}
 				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
 
 # ---- Usual Rules ---- #
