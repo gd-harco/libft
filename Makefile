@@ -42,6 +42,7 @@ C_FILES =		char/ft_isalnum.c	\
 				numbers/ft_itoa.c	\
 \
 				str/ft_split.c		\
+				str/ft_free_split.c	\
 				str/ft_strchr.c		\
 				str/ft_strdup.c		\
 				str/ft_striteri.c	\
