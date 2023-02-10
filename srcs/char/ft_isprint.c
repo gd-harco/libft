@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "char.h"
+
+bool	ft_isprint(int c)
 {
 	if ((c >= 32 && c < 127))
-		return (1);
-	return (0);
+		return (true);
+	return (false);
 }
