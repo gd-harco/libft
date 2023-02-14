@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: gd-harco <gd-harco@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/14 15:48:11 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/02/14 16:42:59 by gd-harco         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:32:49 by gd-harco          #+#    #+#             */
@@ -10,44 +22,63 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str.h"
+#include "/nfs/homes/gd-harco/Documents/libft/includes/str.h"
+#include "/nfs/homes/gd-harco/Documents/libft/includes/memory.h"
 
-static char	*joning(char *result, char *s2, char *s1)
+static char	*joning(char *result, char **strings)
 {
 	size_t	x;
 	size_t	y;
+	size_t	cur_string;
 
+	cur_string = 0;
 	x = 0;
-	y = 0;
-	while (s1[x])
+	while (strings[cur_string])
 	{
-		result[x] = s1[x];
-		x++;
-	}
-	while (s2[y])
-	{
-		result[x] = s2[y];
-		x++;
-		y++;
+		y = 0;
+		while (strings[cur_string][y++])
+		{
+			result[x] = strings[cur_string][y];
+			x++;
+			y++;
+		}
+		cur_string++;
 	}
 	result[x] = '\0';
 	return (result);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(int str_nb, ...)
 {
-	size_t		joined_size;
-	char		*result;
-	size_t		size_s1;
-	size_t		size_s2;
+	size_t	joined_size;
+	char	*result;
+	va_list	args;
+	char	**strings;
+	int		current_place;
 
-	if (!s1 || !s2)
-		return (NULL);
-	size_s1 = ft_strlen (s1);
-	size_s2 = ft_strlen (s2);
-	joined_size = (size_s1 + size_s2);
+	current_place = 0;
+	va_start(args, str_nb);
+	joined_size = 0;
+	strings = malloc(sizeof(char *) * str_nb);
+	while (current_place++ < str_nb)
+	{
+		strings[current_place] = va_arg(args, char *);
+		if (!strings[current_place])
+			return (NULL);
+		joined_size += ft_strlen((char *) strings[current_place]);
+	}
+	va_end(args);
 	result = malloc(sizeof(char) * joined_size + 1);
 	if (!result)
 		return (NULL);
-	return (joning(result, (char *)s2, (char *)s1));
+	return (joning(result, strings));
+}
+
+int main()
+{
+	char *s1 = "hello";
+	char *s2 = "there";
+
+	ft_strjoin(3, s1, "-", s2);
+	return 0;
 }
