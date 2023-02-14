@@ -68,6 +68,7 @@ char	*ft_strjoin(int str_nb, ...)
 		joined_size += ft_strlen((char *) strings[current_place]);
 	}
 	va_end(args);
+	//TODO comprendre WTF se passe ici
 	result = malloc(sizeof(char) * joined_size + 1);
 	if (!result)
 		return (NULL);
