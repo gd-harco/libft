@@ -22,64 +22,78 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/nfs/homes/gd-harco/Documents/libft/includes/str.h"
-#include "/nfs/homes/gd-harco/Documents/libft/includes/memory.h"
+#include "str.h"
+#include "memory.h"
+#include <stdio.h>
 
-static char	*joning(char *result, char **strings)
+static char	*ft_strjoin_util(char const *s1, char const *s2);
+static char	*joning(char *result, char *s2, char *s1);
+
+char	*ft_strjoin(int str_nb, ...)
+{
+	va_list	args;
+	char	*result;
+	char	*tmp;
+	char	*current_str;
+	int		current_place;
+
+	current_place = -1;
+	va_start(args, str_nb);
+	result = NULL;
+	while (++current_place < str_nb)
+	{
+		current_str = va_arg(args, char *);
+		tmp = result;
+		if (tmp)
+		{
+			result = ft_strjoin_util(tmp, current_str);
+			free(tmp);
+			if (result == NULL)
+				return (NULL);
+		}
+		else
+			result = ft_strdup(current_str);
+	}
+	va_end(args);
+	return (result);
+}
+
+static char	*joning(char *result, char *s2, char *s1)
 {
 	size_t	x;
 	size_t	y;
-	size_t	cur_string;
 
-	cur_string = 0;
 	x = 0;
-	while (strings[cur_string])
+	y = 0;
+	while (s1[x])
 	{
-		y = 0;
-		while (strings[cur_string][y++])
-		{
-			result[x] = strings[cur_string][y];
-			x++;
-			y++;
-		}
-		cur_string++;
+		result[x] = s1[x];
+		x++;
+	}
+	while (s2[y])
+	{
+		result[x] = s2[y];
+		x++;
+		y++;
 	}
 	result[x] = '\0';
 	return (result);
 }
 
-char	*ft_strjoin(int str_nb, ...)
+static char	*ft_strjoin_util(char const *s1, char const *s2)
 {
-	size_t	joined_size;
-	char	*result;
-	va_list	args;
-	char	**strings;
-	int		current_place;
+	size_t		joined_size;
+	char		*result;
+	size_t		size_s1;
+	size_t		size_s2;
 
-	current_place = 0;
-	va_start(args, str_nb);
-	joined_size = 0;
-	strings = malloc(sizeof(char *) * str_nb);
-	while (current_place++ < str_nb)
-	{
-		strings[current_place] = va_arg(args, char *);
-		if (!strings[current_place])
-			return (NULL);
-		joined_size += ft_strlen((char *) strings[current_place]);
-	}
-	va_end(args);
-	//TODO comprendre WTF se passe ici
+	if (!s1 || !s2)
+		return (NULL);
+	size_s1 = ft_strlen (s1);
+	size_s2 = ft_strlen (s2);
+	joined_size = (size_s1 + size_s2);
 	result = malloc(sizeof(char) * joined_size + 1);
 	if (!result)
 		return (NULL);
-	return (joning(result, strings));
-}
-
-int main()
-{
-	char *s1 = "hello";
-	char *s2 = "there";
-
-	ft_strjoin(3, s1, "-", s2);
-	return 0;
+	return (joning(result, (char *)s2, (char *)s1));
 }
