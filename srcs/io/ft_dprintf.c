@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 18:24:36 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/03/15 18:25:41 by gd-harco         ###   ########.fr       */
+/*   Created: 2023/03/15 18:23:07 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/03/15 18:26:53 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -25,16 +25,16 @@
 #include "io.h"
 #include "str.h"
 
-static int		print_required(char c, va_list args);
 static ssize_t	ft_base_fd(size_t nbr, char *base, int fd);
+static int		print_required(char c, va_list args, int fd);
 
-int	ft_printf(const char *txt, ...)
+int	ft_dprintf(int fd, char *txt, ...)
 {
 	va_list	args;
 	int		i;
 	int		final_size;
 
-	if (write(1, 0, 0) == -1)
+	if (write(fd, 0, 0) == -1)
 		return (-1);
 	va_start(args, txt);
 	final_size = 0;
@@ -45,10 +45,10 @@ int	ft_printf(const char *txt, ...)
 		i = 0;
 		while (txt[i] && txt[i] != '%')
 			i++;
-		final_size += write(1, txt, i);
+		final_size += write(fd, txt, i);
 		if (txt[i] == '%')
 		{
-			final_size += print_required(txt[++i], args);
+			final_size += print_required(txt[++i], args, fd);
 			txt++;
 		}
 		txt += i;
@@ -56,7 +56,7 @@ int	ft_printf(const char *txt, ...)
 	return (final_size);
 }
 
-ssize_t	ft_base_fd(size_t nbr, char *base, int fd)
+static ssize_t	ft_base_fd(size_t nbr, char *base, int fd)
 {
 	size_t	size;
 	size_t	lenbase;
@@ -69,30 +69,30 @@ ssize_t	ft_base_fd(size_t nbr, char *base, int fd)
 	return (size);
 }
 
-static int	print_required(char c, va_list args)
+static int	print_required(char c, va_list args, int fd)
 {
 	size_t	buff;
 
 	buff = 0;
 	if (c == 'c')
-		return (ft_putchar_fd(va_arg(args, int), 1));
+		return (ft_putchar_fd(va_arg(args, int), fd));
 	if (c == 's')
-		return (ft_putstr_fd(va_arg(args, char *), 1));
+		return (ft_putstr_fd(va_arg(args, char *), fd));
 	if (c == 'u')
-		return (ft_base_fd(va_arg(args, unsigned int), "0123456789", 1));
+		return (ft_base_fd(va_arg(args, unsigned int), "0123456789", fd));
 	if (c == 'i' || c == 'd')
-		return (ft_putnbr_fd(va_arg(args, int), 1, 0));
+		return (ft_putnbr_fd(va_arg(args, int), fd, 0));
 	if (c == 'x')
-		return (ft_base_fd(va_arg(args, unsigned int), "0123456789abcdef", 1));
+		return (ft_base_fd(va_arg(args, unsigned int), "0123456789abcdef", fd));
 	if (c == 'X')
-		return (ft_base_fd(va_arg(args, unsigned int), "0123456789ABCDEF", 1));
+		return (ft_base_fd(va_arg(args, unsigned int), "0123456789ABCDEF", fd));
 	if (c == '%')
-		return (ft_putchar_fd('%', 1));
+		return (ft_putchar_fd('%', fd));
 	if (c == 'p')
 	{
-		buff += ft_putstr_fd("0x", 1);
+		buff += ft_putstr_fd("0x", fd);
 		return (buff += ft_base_fd(va_arg(args, size_t), \
-		"0123456789abcdef", 1));
+		"0123456789abcdef", fd));
 	}
 	return (0);
 }
