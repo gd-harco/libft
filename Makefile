@@ -101,7 +101,7 @@ OBJS_DEBUG		=	${addprefix ${DIR_OBJS},${SRCS:.c=_debug.o}}
 
 CC				= cc
 
-FLAGS 			= -Wall -Wextra -Werror -fsanitize=address
+FLAGS 			= -Wall -Wextra -Werror
 
 DEBUG_FLAGS		=-g3 -fsanitize=address
 
