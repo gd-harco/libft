@@ -67,6 +67,7 @@ C_FILES 		=	char/ft_isalnum.c	\
 					str/ft_split.c		\
 					str/ft_free_split.c	\
 					str/ft_strchr.c		\
+					str/ft_strcmp.c		\
 					str/ft_strdup.c		\
 					str/ft_strpdup.c	\
 					str/ft_striteri.c	\
