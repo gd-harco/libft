@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:27:39 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/05/12 14:28:25 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/05/12 16:10:01 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@ bool	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
-	while (str[i] || str2[i])
+	i = 0;
+	while (s1[i] || s2[i])
 	{
-		if (str[i] != str2[i])
+		if (s1[i] != s2[i])
 			return (false);
 		i++;
 	}
-	if (str[i] == str2[i])
+	if (s1[i] == s2[i])
 		return (true);
 	else
 		return (false);
