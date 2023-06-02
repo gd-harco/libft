@@ -41,8 +41,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t		size_s1;
 	size_t		size_s2;
 
-	if (!s2)
+	if (!s1 && !s2)
 		return (NULL);
+	if (!s2 && s1)
+		return (ft_strdup(s1));
 	if (!s1 && s2)
 		return (ft_strdup(s2));
 	size_s1 = ft_strlen (s1);
