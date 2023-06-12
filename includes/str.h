@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gd-harco <gd-harco@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 10:47:50 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/02/24 10:47:50 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:31:47 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 
 char	**ft_split(char const *s, char c);
 void	ft_free_split(void *splitted_element);
-bool    ft_strcmp(char *s1, char *s2);
+bool	ft_strcmp(char *s1, char *s2);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 char	*ft_strpdup(const char *s1, int index);
