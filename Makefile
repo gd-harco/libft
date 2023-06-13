@@ -82,7 +82,8 @@ C_FILES 		=	char/ft_isalnum.c	\
 					str/ft_strtrim.c	\
 					str/ft_substr.c		\
 \
-					array/ft_array_length.c
+					array/ft_array_length.c	\
+					array/ft_array_dup.c
 
 HEADERS 		=	${INCLUDES}char.h				\
 					${INCLUDES}io.h					\
@@ -102,7 +103,7 @@ OBJS_DEBUG		=	${addprefix ${DIR_OBJS},${SRCS:.c=_debug.o}}
 
 CC				= cc
 
-FLAGS 			= -Wall -Wextra -Werror -g3 
+FLAGS 			= -Wall -Wextra -Werror -g3
 
 DEBUG_FLAGS		= -g3 -fsanitize=address
 
