@@ -16,6 +16,6 @@
 # include <stdbool.h>
 
 size_t	ft_array_length(void **array);
-void	**ft_array_dup(void **array, bool free_array);
+void	**ft_array_dup(void **array, bool free_array, bool dup_strings);
 
 #endif
