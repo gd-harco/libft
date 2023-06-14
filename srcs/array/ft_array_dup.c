@@ -21,7 +21,7 @@ void	**ft_array_dup(void **array, bool free_array, bool dup_strings)
 	void	**new_array;
 
 	array_length = ft_array_length(array);
-	new_array = ft_calloc(array_length + 1, sizeof(void *));
+	new_array = ft_calloc(array_length, sizeof(void *));
 	if (!new_array)
 		return (NULL);
 	if (dup_strings)
