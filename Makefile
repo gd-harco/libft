@@ -83,7 +83,9 @@ C_FILES 		=	char/ft_isalnum.c	\
 					str/ft_substr.c		\
 \
 					array/ft_array_length.c	\
-					array/ft_array_dup.c
+					array/ft_array_dup.c	\
+					array/ft_merge_array.c
+
 
 HEADERS 		=	${INCLUDES}char.h				\
 					${INCLUDES}io.h					\
