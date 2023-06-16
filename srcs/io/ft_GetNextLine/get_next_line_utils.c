@@ -12,18 +12,6 @@
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char	*s)
-{
-	size_t	size;
-
-	if (!s)
-		return (0);
-	size = 0;
-	while (s[size] != '\0')
-		size++;
-	return (size);
-}
-
 int	index_of(char buf[BUFFER_SIZE +1], char r)
 {
 	int	i;
