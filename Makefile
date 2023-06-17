@@ -107,7 +107,7 @@ CC				= cc
 
 FLAGS 			= -Wall -Wextra -Werror -g3
 
-DEBUG_FLAGS		= -g3 -fsanitize=address
+DEBUG_FLAGS		= -fsanitize=address
 
 
 # ---- Commands ---- #
@@ -121,7 +121,7 @@ all:			${DIR_OBJS}
 				@${MAKE} ${NAME}
 
 debug:			${DIR_OBJS}
-				@${MAKE} ${NAME_DEBUG} FLAGS="${FLAGS} ${DEBUG_FLAGS}"
+				make all FLAGS="${FLAGS} ${DEBUG_FLAGS}"
 
 # ---- Variables Rules ---- #
 
