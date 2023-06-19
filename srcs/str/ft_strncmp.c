@@ -18,6 +18,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned char	*s1b;
 	unsigned char	*s2b;
 
+	if (!s1 || !s2)
+		return (-1);
 	s1b = (unsigned char *)s1;
 	s2b = (unsigned char *)s2;
 	x = 0;
