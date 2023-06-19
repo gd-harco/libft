@@ -12,7 +12,16 @@
 
 #include "str.h"
 
-bool	ft_strcmp(char *s1, char *s2)
+/**
+ * @function ft_strcmp
+ * @brief Compare two strings.
+ * @param s1 The first string to be compared.
+ * @param s2 The second string to be compared.
+ * @return true if the strings are identical, false otherwise.
+ * @author gd-harco
+ */
+
+bool	ft_strcmp(const char *s1, const char *s2)
 {
 	int	i;
 

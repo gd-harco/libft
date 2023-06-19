@@ -12,6 +12,14 @@
 
 #include "str.h"
 
+/**
+ * @function ft_striteri
+ * @brief Applies the function f to each character of the string passed
+ * @param s The string on which to iterate.
+ * @param f The function to apply to each character of s and its index.
+ * @author gd-harco
+ */
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	x;

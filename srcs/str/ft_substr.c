@@ -12,6 +12,14 @@
 
 #include "str.h"
 
+/**
+ * @brief Allocates (with malloc(3)) and returns a substring from the string ’s’.
+ * @param s The string from which to create the substring.
+ * @param start The start index of the substring in the string ’s’.
+ * @param len  The maximum length of the substring.
+ * @return the new substring. NULL if the allocation fails.
+ */
+
 static size_t	get_length(char const *s, unsigned int start, size_t len)
 {
 	size_t	x;
