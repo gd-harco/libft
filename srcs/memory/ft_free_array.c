@@ -11,15 +11,18 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "../../includes/array.h"
 
 void	ft_free_array(void **tab)
 {
 	int	i;
+	int	j;
 
 	if (tab)
 	{
+		j = ft_array_length(tab);
 		i = 0;
-		while (tab[i])
+		while (i < j)
 			free(tab[i++]);
 		free(tab);
 	}
