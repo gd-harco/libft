@@ -84,6 +84,7 @@ C_FILES 		=	char/ft_isalnum.c	\
 \
 					array/ft_array_length.c	\
 					array/ft_array_dup.c	\
+					array/ft_sort_array.c	\
 					array/ft_merge_array.c
 
 

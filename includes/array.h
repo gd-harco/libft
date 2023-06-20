@@ -19,4 +19,5 @@ size_t	ft_array_length(void **array);
 void	**ft_array_dup(void **array, bool free_array, bool dup_strings);
 char	**ft_merge_array(char **p_array, char **s_array,
 			bool free_array, bool free_line);
+void	ft_sort_array(char **array);
 #endif
