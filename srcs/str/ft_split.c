@@ -57,7 +57,6 @@ char	**ft_split(char const *s, char c)
 	return (dest);
 }
 
-
 static char	**free_all(char **dest, size_t i)
 {
 	while (i--)

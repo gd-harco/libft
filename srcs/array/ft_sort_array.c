@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_array.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/21 13:21:41 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/06/21 13:22:07 by gd-harco         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "str.h"
 
-void ft_sort_array(char **array_to_sort)
+void	ft_sort_array(char **array_to_sort)
 {
-	int i;
-	int j;
-	char *temp;
+	int		i;
+	int		j;
+	char	*temp;
 
 	i = 0;
 	while (array_to_sort[i])
