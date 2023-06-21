@@ -15,7 +15,9 @@
 /**
  * @brief Create a duplicate of an array with an additional pointer at the end.
  * @param array The array in which to add the pointer.
- * @param content The pointer to add.
+ * @param content The pointer to add.\n
+ * It must have been allocated with malloc(3) to avoid causing issue
+ * when the array will be freed later in the program.
  * @return The new array with the pointer added.
  */
 void	**ft_add_array_line(void **array, void *content)
