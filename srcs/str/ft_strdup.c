@@ -14,7 +14,8 @@
 
 /**
  * @function ft_strdup
- * @brief Allocate (with malloc(3)) and returns a NULL-terminated copy of string s1.
+ * @brief Allocate (with malloc(3)) and returns
+ * a NULL-terminated copy of string s1.
  * @param s1 The string to be duplicated.
  * @return The pointer to the new string. \n
  * NULL if the allocation fails or if s1 is NULL.

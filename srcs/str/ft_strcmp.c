@@ -17,25 +17,19 @@
  * @brief Compare two strings.
  * @param s1 The first string to be compared.
  * @param s2 The second string to be compared.
- * @return true if the strings are identical, false otherwise.
+ * @return 0 if the strings are identical,
+ * otherwise the difference between the first two differing bytes.
  * @author gd-harco
  */
 
-bool	ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	int	i;
-
-	i = 0;
-	if (!s1 || !s2)
-		return (false);
-	while (s1[i] || s2[i])
+	while (*(unsigned char *)s1 + *(unsigned char *)s2 != 0)
 	{
-		if (s1[i] != s2[i])
-			return (false);
-		i++;
+		if (*(unsigned char *)s1 != *(unsigned char *)s2)
+			return (*(unsigned char *)s1 - *(unsigned char *)s2);
+		s1++;
+		s2++;
 	}
-	if (s1[i] == s2[i])
-		return (true);
-	else
-		return (false);
+	return (0);
 }
