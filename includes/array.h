@@ -16,6 +16,11 @@
 # include <stdbool.h>
 
 size_t	ft_array_length(void **array);
-void	**ft_array_dup(void **array, bool free_array);
+void	**ft_array_dup(void **array, bool free_array, bool dup_strings);
+char	**ft_merge_array(char **p_array, char **s_array,
+			bool free_array, bool free_line);
+void	ft_sort_array(char **array);
+void	**ft_add_array_line(void **array, void *content);
+void	ft_remove_array_line(void **array, size_t index, bool free_line);
 
 #endif

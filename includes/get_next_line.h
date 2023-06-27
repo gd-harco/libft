@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include "str.h"
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
@@ -24,7 +25,6 @@
 
 char	*get_next_line(int fd);
 int		index_of(char buf[BUFFER_SIZE +1], char r);
-size_t	ft_strlen(const char	*s);
 char	*gnl_join(char *str, char buff[BUFFER_SIZE + 1], size_t	len);
 void	move_buf(char buf[BUFFER_SIZE + 1], size_t index);
 char	*final_read(char buf[BUFFER_SIZE + 1], \

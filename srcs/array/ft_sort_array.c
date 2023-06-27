@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_sort_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 12:30:19 by gd-harco          #+#    #+#             */
-/*   Updated: 2022/12/05 10:38:35 by gd-harco         ###   ########lyon.fr   */
+/*   Created: 2023/06/21 13:21:41 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/06/21 13:22:07 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_sort_array(char **array_to_sort)
 {
-	size_t			x;
-	unsigned char	*s1b;
-	unsigned char	*s2b;
+	int		i;
+	int		j;
+	char	*temp;
 
-	if (!s1 || !s2)
-		return (-1);
-	s1b = (unsigned char *)s1;
-	s2b = (unsigned char *)s2;
-	x = 0;
-	while ((s1b[x] || s2b[x]) && x < n)
+	i = 0;
+	while (array_to_sort[i])
 	{
-		if (s1b[x] == s2b[x])
-			x++;
-		else
-			return (s1b[x] - s2b[x]);
+		j = i + 1;
+		while (array_to_sort[j])
+		{
+			if (ft_strcmp(array_to_sort[i], array_to_sort[j]) > 0)
+			{
+				temp = array_to_sort[i];
+				array_to_sort[i] = array_to_sort[j];
+				array_to_sort[j] = temp;
+			}
+			j++;
+		}
+		i++;
 	}
-	return (0);
 }

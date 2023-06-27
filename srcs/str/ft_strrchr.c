@@ -12,6 +12,14 @@
 
 #include "str.h"
 
+/**
+ * @brief Locate the last occurrence of the character c in the string s.
+ * @param s The string to be searched in.
+ * @param c The character to be searched for.
+ * @return A pointer to the last occurrence of character in the string. \n
+ * If the value is not found, the function returns a null pointer.
+ */
+
 char	*ft_strrchr(const char *s, int c)
 {
 	int	x;

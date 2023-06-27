@@ -30,7 +30,7 @@
 
 char	**ft_split(char const *s, char c);
 void	ft_free_split(void *splitted_element);
-bool	ft_strcmp(char *s1, char *s2);
+int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 char	*ft_strpdup(const char *s1, int index);

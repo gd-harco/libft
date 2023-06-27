@@ -12,27 +12,17 @@
 
 #include "str.h"
 
-static char	*joning(char *result, char *s2, char *s1)
-{
-	size_t	x;
-	size_t	y;
+static char	*joning(char *result, char *s2, char *s1);
 
-	x = 0;
-	y = 0;
-	while (s1[x])
-	{
-		result[x] = s1[x];
-		x++;
-	}
-	while (s2[y])
-	{
-		result[x] = s2[y];
-		x++;
-		y++;
-	}
-	result[x] = '\0';
-	return (result);
-}
+/**
+ * @function ft_strjoin
+ * @brief Allocates (with malloc(3)) and returns a new string,
+ * which is the result of the concatenation of ’s1’ and ’s2’.
+ * @param s1 The prefix string.
+ * @param s2 The suffix string.
+ * @return The newly allocated array of strings.\n
+ * NULL if the allocation fails or if s1 and s2 is NULL.
+ */
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -54,4 +44,26 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!result)
 		return (NULL);
 	return (joning(result, (char *)s2, (char *)s1));
+}
+
+static char	*joning(char *result, char *s2, char *s1)
+{
+	size_t	x;
+	size_t	y;
+
+	x = 0;
+	y = 0;
+	while (s1[x])
+	{
+		result[x] = s1[x];
+		x++;
+	}
+	while (s2[y])
+	{
+		result[x] = s2[y];
+		x++;
+		y++;
+	}
+	result[x] = '\0';
+	return (result);
 }

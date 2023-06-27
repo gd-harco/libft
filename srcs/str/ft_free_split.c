@@ -12,6 +12,12 @@
 
 #include "str.h"
 
+/**
+ * @brief Free a double dimension array of strings, created by ft_split.
+ * @param splitted_element The array to free.
+ * @see ft_split
+ * @author gd-harco
+ */
 void	ft_free_split(void *splitted_element)
 {
 	size_t	i;
