@@ -24,6 +24,8 @@
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
+	if (!s1 || !s2)
+		return (-1);
 	while (*(unsigned char *)s1 + *(unsigned char *)s2 != 0)
 	{
 		if (*(unsigned char *)s1 != *(unsigned char *)s2)
