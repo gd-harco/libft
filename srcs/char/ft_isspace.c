@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char.h                                             :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 10:18:42 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/09/29 15:50:37 by gd-harco         ###   ########lyon.fr   */
+/*   Created: 2023/09/28 14:59:45 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/09/29 15:49:44 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHAR_H
-# define CHAR_H
-# include <stdbool.h>
+#include "char.h"
 
-bool	ft_isalnum(int c);
-bool	ft_isalpha(int c);
-bool	ft_isascii(int c);
-bool	ft_isdigit(int c);
-bool	ft_isprint(int c);
-bool	ft_isspace(int c);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
-
-#endif
+bool	ft_isspace(int c)
+{
+	return (c == ' ' || c == '\n' || c == '\t'
+		|| c == '\v' || c == '\f' || c == '\r');
+}
