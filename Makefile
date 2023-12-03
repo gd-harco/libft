@@ -24,6 +24,10 @@ DIR_OBJS		=	./.objs/
 
 SRCS			=	${addprefix srcs/, ${C_FILES}}
 
+INSTALL_DIR		=	/usr/lib
+
+SYSTEM_INCDIR	=	/usr/include
+
 # ---- FILES ---- #
 C_FILES 		=	char/ft_isalnum.c	char/ft_isalpha.c	\
 					char/ft_isascii.c	char/ft_isdigit.c	\
@@ -96,6 +100,10 @@ all:			${DIR_OBJS}
 
 debug:			${DIR_OBJS}
 				make all FLAGS="${FLAGS} ${DEBUG_FLAGS}"
+
+install:		all
+				cp ${NAME} ${INSTALL_DIR}
+				cp ${HEADERS} ${SYSTEM_INCDIR}
 
 # ---- Variables Rules ---- #
 
