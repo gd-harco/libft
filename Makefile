@@ -60,9 +60,11 @@ C_FILES 		=	char/ft_isalnum.c	char/ft_isalpha.c	\
 					str/ft_strncmp.c	str/ft_strnstr.c		str/ft_strrchr.c	\
 					str/ft_strtrim.c	str/ft_substr.c		\
 \
-					array/ft_add_array_line.c	array/ft_array_dup.c		\
-					array/ft_array_length.c		array/ft_sort_array.c		\
-					array/ft_merge_array.c		array/ft_remove_array_line.c
+					array/ft_add_array_line.c	array/ft_array_dup.c			\
+					array/ft_array_length.c		array/ft_sort_array.c			\
+					array/ft_merge_array.c		array/ft_remove_array_line.c	\
+\
+					file/ft_file_in_char.c
 
 
 HEADERS 		=	${INCLUDES}char.h				\
@@ -73,7 +75,8 @@ HEADERS 		=	${INCLUDES}char.h				\
 					${INCLUDES}numbers.h			\
 					${INCLUDES}str.h				\
 					${INCLUDES}get_next_line.h		\
-					${INCLUDES}array.h
+					${INCLUDES}array.h			\
+					${INCLUDES}file.h
 
 OBJS			=	${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 
