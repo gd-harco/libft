@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.20)
 
 project(libft LANGUAGES C VERSION 2.0 DESCRIPTION "42 student basic lib")
 
