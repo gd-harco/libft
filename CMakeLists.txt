@@ -15,5 +15,6 @@ add_subdirectory(srcs/str)
 add_subdirectory(srcs/array)
 add_subdirectory(srcs/file)
 
-message("Creating Shared Object")
-add_library(${PROJECT_NAME} SHARED ${LIBFT_SOURCES})
+add_library(ft SHARED ${LIBFT_SOURCES})
+add_library(ft_static STATIC ${LIBFT_SOURCES})
+set_property(TARGET ft_static PROPERTY OUTPUT_NAME ft)
