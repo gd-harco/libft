@@ -13,7 +13,7 @@
 # ******** VARIABLES ******** #
 
 # ---- Final Executable --- #
-NAME			=	libft.a
+NAME			=	libft.so
 
 NAME_DEBUG		=	libft_debug.a
 
@@ -80,16 +80,12 @@ HEADERS 		=	${INCLUDES}char.h				\
 
 OBJS			=	${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 
-OBJS_DEBUG		=	${addprefix ${DIR_OBJS},${SRCS:.c=_debug.o}}
 
 # ---- Compilation ---- #
 
 CC				= cc
 
-FLAGS 			= -Wall -Wextra -Werror -g3
-
-DEBUG_FLAGS		= -fsanitize=address
-
+FLAGS 			= -Wall -Wextra -Werror -g3 -fPIC
 
 # ---- Commands ---- #
 RMF				=	rm -rf
@@ -101,9 +97,6 @@ MKDIR			= 	mkdir -p
 all:			${DIR_OBJS}
 				@${MAKE} ${NAME}
 
-debug:			${DIR_OBJS}
-				make all FLAGS="${FLAGS} ${DEBUG_FLAGS}"
-
 install:		all
 				cp ${NAME} ${INSTALL_DIR}
 				cp ${HEADERS} ${SYSTEM_INCDIR}
@@ -111,10 +104,7 @@ install:		all
 # ---- Variables Rules ---- #
 
 $(NAME):		${OBJS}
-				ar rcs ${NAME} ${OBJS}
-
-${NAME_DEBUG}: ${OBJS_DEBUG}
-				ar rcs ${NAME_DEBUG} ${OBJS_DEBUG}
+				gcc -shared -o ${NAME} ${OBJS}
 
 # ---- Compiled Rules ---- #
 
@@ -129,9 +119,6 @@ ${DIR_OBJS}:
 				@# Executes the script (Creates all folders)
 
 ${DIR_OBJS}%.o: %.c ${HEADERS}
-				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
-
-${DIR_OBJS}%_debug.o: %.c ${HEADERS}
 				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
 
 # ---- Usual Rules ---- #
