@@ -16,3 +16,4 @@ amain.c
 *.a
 .idea
 *.so
+_builds
