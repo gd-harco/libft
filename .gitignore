@@ -15,3 +15,5 @@ amain.c
 .objs/
 *.a
 .idea
+*.so
+_builds
