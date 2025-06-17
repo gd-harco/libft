@@ -15,6 +15,5 @@ add_subdirectory(srcs/str)
 add_subdirectory(srcs/array)
 add_subdirectory(srcs/file)
 
-add_library(ft SHARED ${LIBFT_SOURCES})
-add_library(ft_static STATIC ${LIBFT_SOURCES})
-set_property(TARGET ft_static PROPERTY OUTPUT_NAME ft)
+add_library(ft STATIC ${LIBFT_SOURCES})
+target_compile_options(ft PRIVATE -fvisibility=hidden)
